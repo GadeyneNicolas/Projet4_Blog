@@ -1,16 +1,16 @@
 <?php $this->titre = "Mon Blog - " . $billet['titre']; ?>
 
 <article>
-    <header>
+    <div>
         <h1 class="titreBillet"><?= $billet['titre'] ?></h1>
         <time><?= $billet['date'] ?></time>
-    </header>
+    </div>
     <p><?= $billet['contenu'] ?></p>
 </article>
 <hr />
-<header>
+<div>
     <h1 id="titreReponses">Réponses à <?= $billet['titre'] ?></h1>
-</header>
+</div>
 <?php foreach ($commentaires as $commentaire): ?>
     <p><?= $commentaire['auteur'] ?> dit :</p>
     <p><?= $commentaire['contenu'] ?></p>

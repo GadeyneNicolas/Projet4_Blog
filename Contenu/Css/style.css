@@ -7,45 +7,132 @@
    Pour pouvoir utiliser un "min-height: 100%" sur div#global, il nous faut:
    - un parent (body) en "height: 100%";
    - le parent de body également en "height: 100%". */
-html, body {
-    height: 100%;
+html {
+    overflow-x: hidden!important;
 }
-
 body {
-    color: #bfbfbf;
-    background: black;
+    color: black;
+    background: white;
     font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 
-h1 {
+h1, h2, h3 {
+    font-family: 'ABeeZee', sans-serif;
+}
+
+p, a {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+header {
+    display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	position: fixed;
+	z-index: 1000;
+	background-color: #144760;
+	right: 0;
+    top: 0;
+	left: 0;
+	height: 64px;
+	padding-bottom: 5px
+}
+
+#titre_header
+{
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+    margin-left: 20px;
+}
+
+#titre_header h1 {
     color: white;
+    font-weight: bold;
 }
 
-.titreBillet {
-    margin-bottom : 0px;
+header nav ol
+{
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
 }
 
-#global {
-    min-height: 100%;  /* Voir commentaire sur html et body plus haut */
-    background: #333534;
-    width: 70%;
-    margin: auto;	/* Permet de centrer la div */
-    text-align: justify;
-    padding: 5px 20px;
+header nav li
+{
+	margin-right: 15px;
+}
+
+header nav a
+{
+	text-decoration: none;
+	color: white;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+header nav a:hover
+{
+    color: #95c4db;
+    border-bottom: 3px solid;
+    padding-bottom: 5px;
+}
+
+#banniere {
+    display: flex;
+}
+
+#banniere img {
+    width: 500px;
+    box-shadow: 0px 5px 15px lightgray;
+}
+
+#banniere_texte {
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+#banniere_bouton {
+    text-align: center;
+    width: 150px;
+    margin-top: 35px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px lightgrey;
+    font-weight: bold;
+    background-color: white;
+    color: #545454;
 }
 
 #contenu {
-    margin-bottom : 30px;
+ margin-top: 80px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
 }
 
-#titreBlog, #piedBlog {
-    text-align: center;
+footer
+{
+    background-color:#144760;
+    width: 100vw;
+    margin-bottom: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#titreReponses {
-    font-size : 100%;
-}
-
-#txtCommentaire {
-    width: 50%;
+footer p
+{
+    color: white;
+    text-align: start;
 }
