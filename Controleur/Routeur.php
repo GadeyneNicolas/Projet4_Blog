@@ -1,15 +1,15 @@
 <?php
 
-require_once 'Controleur/ControleurAccueil.php';
+require_once 'Controleur/ControleurPage.php';
 require_once 'Controleur/ControleurBillet.php';
 require_once 'Vue/Vue.php';
 class Routeur {
 
-    private $ctrlAccueil;
+    private $ctrlPage;
     private $ctrlBillet;
 
     public function __construct() {
-        $this->ctrlAccueil = new ControleurAccueil();
+        $this->ctrlPage = new ControleurPage();
         $this->ctrlBillet = new ControleurBillet();
     }
 
@@ -30,12 +30,18 @@ class Routeur {
                     $contenu = $this->getParametre($_POST, 'contenu');
                     $idBillet = $this->getParametre($_POST, 'id');
                     $this->ctrlBillet->commenter($auteur, $contenu, $idBillet);
+                } else if (($_GET['action'] == 'APropos')) {
+                    $this->ctrlPage->APropos();
+                }    else if (($_GET['action'] == 'MesLivres')) {
+                    $this->ctrlPage->MesLivres();
+                }  else if (($_GET['action'] == 'Contact')) {
+                    $this->ctrlPage->Contact();
                 }
                 else
                     throw new Exception("Action non valide");
             }
             else {  // aucune action définie : affichage de l'accueil
-                $this->ctrlAccueil->accueil();
+                $this->ctrlPage->accueil();
             }
         }
         catch (Exception $e) {

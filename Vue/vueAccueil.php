@@ -1,5 +1,9 @@
 <?php $this->titre = "Mon Blog"; ?>
 
+<section id="presentation">
+    <img id="indexImg" src="Contenu/Images/index.jpg">
+</section>
+
 <section id="banniere">
     <div id="banniere_image"><img src="Contenu/Images/banniere.png"></div>
     <div id="banniere_texte">
@@ -11,7 +15,7 @@
 
 <?php foreach ($billets as $billet):
     ?>
-    <section>
+    <section id="billets">
         <div>
             <a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>"> 
                 <h3 class="titreBillet"><?= $billet['titre'] ?></h3></a>

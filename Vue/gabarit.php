@@ -14,17 +14,16 @@
         <nav>
             <ol>
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="#">A Propos</a></li>
-                <li><a href="#">Mes livres</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="index.php?action=APropos">A Propos</a></li>
+                <li><a href="index.php?action=MesLivres">Mes livres</a></li>
+                <li><a href="index.php?action=Contact">Contact</a></li>
             </ol>
         </nav>
     </header>
 
-    <section id="contenu">
+    <div id="contenu">
         <?= $contenu ?>
-    <section>
-
+    </div>
 </body>
 
 <footer id="piedBlog">
