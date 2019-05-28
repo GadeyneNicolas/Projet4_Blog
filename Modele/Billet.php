@@ -28,7 +28,7 @@ class Billet extends Modele {
      * @throws Exception Si l'identifiant du billet est inconnu
      */
     public function getBillet($idBillet) {
-        $sql = 'select BIL_ID as id, BIL_DATE as date,'
+        $sql = 'select BIL_ID as id, BIL_DATE as dateBillet,'
                 . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
                 . ' where BIL_ID=?';
         $billet = $this->executerRequete($sql, array($idBillet));
@@ -38,4 +38,16 @@ class Billet extends Modele {
             throw new Exception("Aucun billet ne correspond à l'identifiant '$idBillet'");
     }
 
+    public function ajouterBillet($titre, $contenuBillet) {
+        $sql = 'insert into T_BILLET(BIL_DATE, BIL_TITRE, BIL_CONTENU)'
+            . 'values(?, ?, ?)';
+        $dateBillet = date('Y-m-d H:i:s');  // Récupère la date courante
+        $this->executerRequete($sql, array($dateBillet, $titre, $contenuBillet));
+    }
+
+    public function enleverBillet($id) {
+        $sql = 'DELETE FROM T_BILLET WHERE BIL_ID= ?';
+        $this->executerRequete($sql, array($id));
+    }
 }
+

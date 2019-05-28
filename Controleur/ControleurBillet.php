@@ -30,5 +30,17 @@ class ControleurBillet {
         $this->billet($idBillet);
     }
 
+      // Ajoute un billet
+      public function creerBillet($titre, $contenuBillet) {
+        // Sauvegarde du billet
+        $this->billet->AjouterBillet($titre, $contenuBillet);
+    }
+
+     // Supprime un billet
+     public function supprimerBillet($id) {
+        // Supprime le billet
+        $this->billet->enleverBillet($id);
+    }
+
 }
 

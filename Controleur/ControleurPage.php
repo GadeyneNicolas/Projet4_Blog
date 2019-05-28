@@ -33,5 +33,15 @@ class ControleurPage {
         $vue->generer([]);
     }
 
+    public function Admin() {
+        $billets = $this->billet->getBillets();
+        $vue = new Vue("Admin");
+        $vue->generer(array('billets' => $billets));
+    }
+
+    public function Login() {
+        $vue = new Vue("Login");
+        $vue->generer([]);
+    }
 }
 

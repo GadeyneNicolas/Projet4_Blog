@@ -30,14 +30,27 @@ class Routeur {
                     $contenu = $this->getParametre($_POST, 'contenu');
                     $idBillet = $this->getParametre($_POST, 'id');
                     $this->ctrlBillet->commenter($auteur, $contenu, $idBillet);
-                } else if (($_GET['action'] == 'APropos')) {
+                } else if ($_GET['action'] == 'creerBillet') {
+                    $titre = $this->getParametre($_POST, 'titre');
+                    $contenuBillet = $this->getParametre($_POST, 'contenu');
+                    $this->ctrlBillet->creerBillet($titre, $contenuBillet);
+                    $this->ctrlPage->Admin();
+                }  else if ($_GET['action'] == 'supprimerBillet') {
+                    $id = $this->getParametre($_GET, 'id');
+                    $this->ctrlBillet->supprimerBillet($id);
+                    $this->ctrlPage->Admin();
+                }
+                else if (($_GET['action'] == 'APropos')) {
                     $this->ctrlPage->APropos();
                 }    else if (($_GET['action'] == 'MesLivres')) {
                     $this->ctrlPage->MesLivres();
                 }  else if (($_GET['action'] == 'Contact')) {
                     $this->ctrlPage->Contact();
-                }
-                else
+                } else if (($_GET['action'] == 'Admin')) {
+                    $this->ctrlPage->Admin();
+                }  else if (($_GET['action'] == 'Login')) {
+                    $this->ctrlPage->Login();
+                } else 
                     throw new Exception("Action non valide");
             }
             else {  // aucune action définie : affichage de l'accueil

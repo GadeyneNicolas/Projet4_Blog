@@ -3,7 +3,7 @@
 <article>
     <div>
         <h1 class="titreBillet"><?= $billet['titre'] ?></h1>
-        <time><?= $billet['date'] ?></time>
+        <time><?= $billet['dateBillet'] ?></time>
     </div>
     <p><?= $billet['contenu'] ?></p>
 </article>
