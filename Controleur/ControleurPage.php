@@ -33,6 +33,16 @@ class ControleurPage {
         $vue->generer([]);
     }
 
+    public function Confidentialite() {
+        $vue = new Vue("Confidentialite");
+        $vue->generer([]);
+    }
+
+    public function Mentions() {
+        $vue = new Vue("Mentions");
+        $vue->generer([]);
+    }
+
     public function Admin() {
         $billets = $this->billet->getBillets();
         $vue = new Vue("Admin");

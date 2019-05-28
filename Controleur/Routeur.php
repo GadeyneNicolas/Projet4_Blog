@@ -46,6 +46,10 @@ class Routeur {
                     $this->ctrlPage->MesLivres();
                 }  else if (($_GET['action'] == 'Contact')) {
                     $this->ctrlPage->Contact();
+                }  else if (($_GET['action'] == 'Confidentialite')) {
+                    $this->ctrlPage->Confidentialite();
+                }  else if (($_GET['action'] == 'Mentions')) {
+                    $this->ctrlPage->Mentions();
                 } else if (($_GET['action'] == 'Admin')) {
                     $this->ctrlPage->Admin();
                 }  else if (($_GET['action'] == 'Login')) {

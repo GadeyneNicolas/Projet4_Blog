@@ -28,11 +28,13 @@
             <div id="infos_contact">
                     <h2>Infos Contact!</h2>
 
-                    <p>Texte</p>
-                    <p>Texte</p>
-                    <p>Texte</p>
-                    <p>Texte</p>
-                    <p>Texte</p>
-                    <p>Texte</p>
+                    <p><strong>Téléphone:</strong><br>
+                    06 06 06 06 06</p>
+                    <p><strong>Mail:</strong><br>
+                    aaa@gmail.com</p>
+                    <p><strong>Adresse:</strong><br>
+                    ahah</p>
+                    <p><strong>Ville:</strong><br>
+                     Bordeaux.</p>
             </div>
         </section>

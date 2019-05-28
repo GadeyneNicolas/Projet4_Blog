@@ -29,6 +29,14 @@ p, a {
     font-family: 'Nunito Sans', sans-serif;
 }
 
+button a {
+    text-decoration: none;
+}
+
+a {
+    color: #144760;
+}
+
 p {
     margin-left: 10vw;
     margin-right: 10vw;
@@ -137,6 +145,10 @@ footer
     align-items: center;
 }
 
+footer a {
+    color: white;
+}
+
 footer p
 {
     color: white;
@@ -178,6 +190,7 @@ footer p
 .livres_texte {
     margin-left: 100px;
     margin-top: 50px;
+    width: 600px;
 }
 
 .livres_bouton {
@@ -213,6 +226,10 @@ footer p
     background-color: white;
     box-shadow: 0px 5px 15px lightgrey;
     margin: 50px;
+}
+
+#infos_contact p {
+    width: 250px;
 }
 
 #infos_contact h2 {
@@ -292,3 +309,13 @@ table {
     font-family: sans-serif;
     }
 
+#articles {
+    margin-top: 120px;
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.billets {
+  width: 600px;
+}
