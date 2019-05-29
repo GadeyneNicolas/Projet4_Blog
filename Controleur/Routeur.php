@@ -35,7 +35,12 @@ class Routeur {
                     $contenuBillet = $this->getParametre($_POST, 'contenu');
                     $this->ctrlBillet->creerBillet($titre, $contenuBillet);
                     $this->ctrlPage->Admin();
-                }  else if ($_GET['action'] == 'supprimerBillet') {
+                } else if ($_GET['action'] == 'modifierBillet') {
+                    $titre = $this->getParametre($_POST, 'titre');
+                    $contenuBillet = $this->getParametre($_POST, 'contenu');
+                    $this->ctrlBillet->modifierBillet($titre, $contenuBillet);
+                    $this->ctrlPage->Admin();
+                } else if ($_GET['action'] == 'supprimerBillet') {
                     $id = $this->getParametre($_GET, 'id');
                     $this->ctrlBillet->supprimerBillet($id);
                     $this->ctrlPage->Admin();

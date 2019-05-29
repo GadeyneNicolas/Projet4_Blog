@@ -42,5 +42,11 @@ class ControleurBillet {
         $this->billet->enleverBillet($id);
     }
 
+     // Supprime un billet
+     public function modifierBillet($id) {
+        // Supprime le billet
+        $this->billet->corrigerBillet($id);
+    }
+
 }
 

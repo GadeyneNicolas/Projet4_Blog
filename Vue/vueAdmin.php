@@ -5,6 +5,14 @@
     {
     // On affiche les codes
 ?>
+
+
+<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=3z908r4dp7pqzdnxd7b0phc2rlys8utzat2fztg62wbzvcno"></script>
+<script>tinymce.init({selector:'textarea', language : "fr"});</script>
+
+<section id="admin">
+
+        <h2>Poster un article</h2>
                 <form method="post" action="index.php?action=creerBillet">
                     <div>
                         <label for="titre" id="labelnom">Titre :</label>
@@ -19,9 +27,8 @@
                     </div>
                 </form>
 
-<table summary="exemple de structure d'un tableau de données 2 lignes, 2 colonnes">
-    <caption>Tableau de données</caption>
-
+                <h2>Liste des articles</h2>
+<table>
         <tr>
             <th>Id</th>
             <th>Auteur</th>
@@ -37,12 +44,14 @@
             <td>Nom de l'auteur</td>
             <td><?= $billet['titre'] ?></td>
             <td><?= $billet['date'] ?></td>
-            <td>Modifier</td>
+            <?php echo "<td><a href='?action=modifierBillet&id=".$billet['id']."'>Modifier</a></td>"; ?>
             <?php echo "<td><a href='?action=supprimerBillet&id=".$billet['id']."'>Supprimer</a></td>"; ?>
         </tr>
     <?php endforeach; ?>
 </table>
    
+</section>
+
     <?php
     }
     else // Sinon, on affiche un message d'erreur

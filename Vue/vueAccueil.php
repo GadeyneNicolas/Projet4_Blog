@@ -20,12 +20,14 @@
 <?php foreach ($billets as $billet):
     ?>
     <section class="billets">
-        <div>
-            <a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>"> 
-                <h3 class="titreBillet"><?= $billet['titre'] ?></h3></a>
+        <div class=billets_image>
         </div>
-            <time><?= $billet['date'] ?></time>
-        <p><?= $billet['contenu'] ?></p>
+        <div class=billets_texte>
+            <h3 class="titreBillet"><?= $billet['titre'] ?></h3>
+            <br>
+            <button class=billets_bouton><a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>">Lire le chapitre</a></button>
+        </div>
+            
     </section>
 <?php endforeach; ?>
 </div>

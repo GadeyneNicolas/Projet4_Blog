@@ -21,14 +21,14 @@
         </nav>
     </header>
 
-    <div id="contenu">
+    <div class="contenu">
         <?= $contenu ?>
     </div>
-</body>
 
-<footer id="piedBlog">
+    <footer id="piedBlog">
         <p>Copyright © 2019 Jean FORTEROCHE - Billet simple pour l'Alaska - 
          <a href="index.php?action=Mentions">Mentions légales</a> - <a href="index.php?action=Confidentialite">Politique de confidentialité</a></p>
 </footer>
+</body>
 
 </html>

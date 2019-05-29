@@ -1,4 +1,4 @@
-<section id="contenu">
+
         <section id="aPropos">
             <img id="aProposImg" src="Contenu/Images/apropos.jpg">
             <h2>A propos de l'auteur</h2>
@@ -45,5 +45,5 @@
             </ul>
 
        </section>
-    <section>
+
 

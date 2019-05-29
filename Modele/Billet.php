@@ -49,5 +49,10 @@ class Billet extends Modele {
         $sql = 'DELETE FROM T_BILLET WHERE BIL_ID= ?';
         $this->executerRequete($sql, array($id));
     }
+
+    public function corrigerBillet($id) {
+        $sql = 'UPDATE FROM T_BILLET SET BIL_TITRE= ?, BIL_CONTENU= ? WHERE BIL_ID= ?';
+    }
+ 
 }
 
