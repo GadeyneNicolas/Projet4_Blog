@@ -3,6 +3,7 @@
 <section class=les_articles>
 <article class="article">
     <div class="article_img">
+    <?php echo "<img src='".$billet['image']."'>" ?>
     </div>
     <div>
         <h1 class="titreBillet"><?= $billet['titre'] ?></h1>

@@ -2,11 +2,6 @@
 
 require_once 'Modele/Modele.php';
 
-/**
- * Fournit les services d'accès aux genres musicaux 
- * 
- * @author Baptiste Pesquet
- */
 class Billet extends Modele {
 
     /** Renvoie la liste des billets du blog
@@ -15,7 +10,7 @@ class Billet extends Modele {
      */
     public function getBillets() {
         $sql = 'select BIL_ID as id, BIL_DATE as date,'
-                . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
+                . ' BIL_TITRE as titre, BIL_IMAGE as image, BIL_CONTENU as contenu from T_BILLET'
                 . ' order by BIL_ID desc';
         $billets = $this->executerRequete($sql);
         return $billets;
@@ -28,8 +23,9 @@ class Billet extends Modele {
      * @throws Exception Si l'identifiant du billet est inconnu
      */
     public function getBillet($idBillet) {
+        
         $sql = 'select BIL_ID as id, BIL_DATE as dateBillet,'
-                . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
+                . ' BIL_TITRE as titre, BIL_IMAGE as image, BIL_CONTENU as contenu from T_BILLET'
                 . ' where BIL_ID=?';
         $billet = $this->executerRequete($sql, array($idBillet));
         if ($billet->rowCount() > 0)
@@ -38,11 +34,12 @@ class Billet extends Modele {
             throw new Exception("Aucun billet ne correspond à l'identifiant '$idBillet'");
     }
 
-    public function ajouterBillet($titre, $contenuBillet) {
-        $sql = 'insert into T_BILLET(BIL_DATE, BIL_TITRE, BIL_CONTENU)'
-            . 'values(?, ?, ?)';
+    public function ajouterBillet($titre, $lien, $contenuBillet) {
+        $sql = 'insert into T_BILLET(BIL_DATE, BIL_IMAGE, BIL_TITRE, BIL_CONTENU)'
+            . 'values(?, ?, ?, ?)';
         $dateBillet = date('Y-m-d H:i:s');  // Récupère la date courante
-        $this->executerRequete($sql, array($dateBillet, $titre, $contenuBillet));
+
+        $this->executerRequete($sql, array($dateBillet, $lien, $titre, $contenuBillet));
     }
 
     public function enleverBillet($id) {

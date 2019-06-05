@@ -308,6 +308,9 @@ table {
     padding: 8px;
     text-align: center;
     }
+    tr:hover {
+        background-color: lightgrey;
+    }
 
 #articles {
     margin-top: 120px;
@@ -330,6 +333,11 @@ table {
 .billets_image {
     height: 450px;
     background-color: rgb(4, 0, 255);
+}
+
+.billets_image img {
+    width: 500px;
+    height: 450px;
 }
 
 .billets_texte {
@@ -377,6 +385,11 @@ table {
 .article_img {
     height: 400px;
     background-color: blue;
+}
+
+.article_img img {
+    height: 400px;
+    width: 70vw;
 }
 
 .reponses {

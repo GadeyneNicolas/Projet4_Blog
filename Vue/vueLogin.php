@@ -1,10 +1,13 @@
-<p>Veuillez entrer le mot de passe pour obtenir les codes d'accès au serveur central de la NASA :</p>
-<form action="index.php?action=Admin" method="post">
-    <p>
-        <input type="texte" name="pseudo" required />
-        <input type="password" name="mot_de_passe" required />
-        <input type="submit" value="Valider" />
-    </p>
+<p>Veuillez entrer le mot de passe pour accéder au panneau admin :</p>
+
+<form action="index.php?action=connexion" method="post">
+
+<label for="pseudo">Votre pseudo</label>
+<input type="texte" id="pseudo" name="pseudo" required >
+
+<label for="mot_de_passe">Votre mot de passe</label>
+<input type="password" id="mot_de_passe" name="mot_de_passe" required >
+
+<input type="submit" id="connexion" name="connexion" value="connexion" required >
+
 </form>
-<p>Cette page est réservée au personnel de la NASA. Si vous ne travaillez pas à la NASA, inutile d'insister vous ne
-    trouverez jamais le mot de passe ! ;-)</p>

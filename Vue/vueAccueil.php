@@ -17,10 +17,12 @@
 </section>
 
 <div id=articles>
-<?php foreach ($billets as $billet):
-    ?>
+<?php foreach ($billets as $billet): ?>
     <section class="billets">
         <div class=billets_image>
+
+        <?php echo "<img src='".$billet['image']."'>" ?>
+        
         </div>
         <div class=billets_texte>
             <h3 class="titreBillet"><?= $billet['titre'] ?></h3>

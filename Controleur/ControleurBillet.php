@@ -32,8 +32,23 @@ class ControleurBillet {
 
       // Ajoute un billet
       public function creerBillet($titre, $contenuBillet) {
+    
+        if ($_FILES['image']['error'] > 0) $erreur = "Erreur lors du transfert";
+
+        $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
+        //1. strrchr renvoie l'extension avec le point (« . »).
+        //2. substr(chaine,1) ignore le premier caractère de chaine.
+        //3. strtolower met l'extension en minuscules.
+        $extension_upload = strtolower(  substr(  strrchr($_FILES['image']['name'], '.')  ,1)  );
+        if ( in_array($extension_upload,$extensions_valides) ) echo "Extension correcte";
+        
+        $nom = "Contenu/Images/{$titre}.{$extension_upload}";
+        $resultat = move_uploaded_file($_FILES['image']['tmp_name'],$nom);
+        if ($resultat) echo "Transfert réussi";
+        $lien = $nom;
+      
         // Sauvegarde du billet
-        $this->billet->AjouterBillet($titre, $contenuBillet);
+        $this->billet->AjouterBillet($titre, $lien, $contenuBillet);
     }
 
      // Supprime un billet
@@ -43,9 +58,9 @@ class ControleurBillet {
     }
 
      // Supprime un billet
-     public function modifierBillet($id) {
+     public function modifierBillet($id, $titre, $contenuBillet) {
         // Supprime le billet
-        $this->billet->corrigerBillet($id);
+        $this->billet->corrigerBillet($id, $titre, $contenuBillet);
     }
 
 }

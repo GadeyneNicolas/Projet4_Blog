@@ -53,5 +53,10 @@ class ControleurPage {
         $vue = new Vue("Login");
         $vue->generer([]);
     }
+
+    public function Deconnexion() {
+        $vue = new Vue("Deconnexion");
+        $vue->generer([]);
+    }
 }
 
