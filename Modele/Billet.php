@@ -46,10 +46,16 @@ class Billet extends Modele {
         $sql = 'DELETE FROM T_BILLET WHERE BIL_ID= ?';
         $this->executerRequete($sql, array($id));
     }
-
-    public function corrigerBillet($id) {
-        $sql = 'UPDATE FROM T_BILLET SET BIL_TITRE= ?, BIL_CONTENU= ? WHERE BIL_ID= ?';
+    
+   
+    public function corrigerBillet($titre, $lien, $contenuBillet, $id) {
+        $sql = 'UPDATE T_BILLET SET BIL_TITRE = :nvTitre, BIL_IMAGE = :nvLien, BIL_CONTENU = :nvContenu WHERE BIL_ID = :id';
+        $this->executerRequete($sql, array(
+        'nvTitre' => $titre,
+        'nvLien' => $lien,
+	    'nvContenu' => $contenuBillet,
+	    'id' => $id
+	));
     }
- 
 }
 

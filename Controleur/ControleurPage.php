@@ -6,12 +6,14 @@ require_once 'Vue/Vue.php';
 class ControleurPage {
 
     private $billet;
+    private $commentaire;
 
     public function __construct() {
         $this->billet = new Billet();
+        $this->commentaire = new Commentaire();
     }
 
-// Affiche la liste de tous les billets du blog
+    // Affiche la liste de tous les billets du blog
     public function accueil() {
         $billets = $this->billet->getBillets();
         $vue = new Vue("Accueil");
@@ -45,8 +47,20 @@ class ControleurPage {
 
     public function Admin() {
         $billets = $this->billet->getBillets();
+        $commentaireAffichage = $this->commentaire->getCommentaire();
         $vue = new Vue("Admin");
-        $vue->generer(array('billets' => $billets));
+        $vue->generer(array('billets' => $billets, 'commentaires' => $commentaireAffichage));
+    }
+
+    public function Ajouter() {
+        $vue = new Vue("Ajouter");
+        $vue->generer([]);
+    }
+
+    public function Modifier($idBillet) {
+        $billet = $this->billet->getBillet($idBillet);
+        $vue = new Vue("Modifier");
+        $vue->generer(array('billet' => $billet));
     }
 
     public function Login() {

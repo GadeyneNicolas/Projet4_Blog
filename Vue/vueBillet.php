@@ -17,6 +17,7 @@
 
 <?php foreach ($commentaires as $commentaire): ?>
 <div class=commentaire>
+<?php echo "<td><a href='?action=signaler&id=".$commentaire['id']."'>Signaler</a></td>"; ?>
 <p><?= $commentaire['auteur'] ?> dit :</p>
 <p><?= $commentaire['contenu'] ?></p>
 </div>

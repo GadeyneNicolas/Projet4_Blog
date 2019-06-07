@@ -8,6 +8,7 @@ class Routeur {
 
     private $ctrlPage;
     private $ctrlBillet;
+    private $ctrlAdmin;
 
     public function __construct() {
         $this->ctrlPage = new ControleurPage();
@@ -37,15 +38,23 @@ class Routeur {
                     $contenuBillet = $this->getParametre($_POST, 'contenu');
                     $this->ctrlBillet->creerBillet($titre, $contenuBillet);
                     $this->ctrlPage->Admin();
-                } else if ($_GET['action'] == 'modifierBillet') {
-                    $id = $this->getParametre($_GET, 'id');
-                    $titre = $this->getParametre($_POST, 'titre');
-                    $contenuBillet = $this->getParametre($_POST, 'contenu');
-                    $this->ctrlBillet->modifierBillet($id, $titre, $contenuBillet);
-                    $this->ctrlPage->Admin();
                 } else if ($_GET['action'] == 'supprimerBillet') {
                     $id = $this->getParametre($_GET, 'id');
                     $this->ctrlBillet->supprimerBillet($id);
+                    $this->ctrlPage->Admin(); 
+                }  else if ($_GET['action'] == 'modifierBillet') {
+                    $titre = $this->getParametre($_POST, 'titre');
+                    $contenuBillet = $this->getParametre($_POST, 'contenu');
+                    $id = $this->getParametre($_POST, 'id');
+                    $this->ctrlBillet->modifierBillet($titre, $contenuBillet, $id);
+                    $this->ctrlPage->Admin();  
+                } else if ($_GET['action'] == 'signaler') {
+                    $id = $this->getParametre($_GET, 'id');
+                    $this->ctrlBillet->signaler($id);
+                    $this->ctrlPage->Accueil();  
+                } else if ($_GET['action'] == 'supprimerCommentaire') {
+                    $id = $this->getParametre($_GET, 'id');
+                    $this->ctrlBillet->supprimerCommentaire($id);
                     $this->ctrlPage->Admin(); 
                 }  else if ($_GET['action'] == 'connexion') {
                     $pseudo = $this->getParametre($_POST, 'pseudo');
@@ -63,6 +72,16 @@ class Routeur {
                     $this->ctrlPage->Mentions();
                 } else if (($_GET['action'] == 'Admin')) {
                     $this->ctrlPage->Admin();
+                } else if (($_GET['action'] == 'Ajouter')) {
+                    $this->ctrlPage->Ajouter();
+                } else if (($_GET['action'] == 'Modifier')) {
+                    $idBillet = intval($this->getParametre($_GET, 'id'));
+                    if ($idBillet != 0) {
+                        $this->ctrlPage->Modifier($idBillet);
+                    }
+                    else
+                        throw new Exception("Identifiant de billet non valide");
+                    // $this->ctrlPage->Modifier();
                 }  else if (($_GET['action'] == 'Login')) {
                     $this->ctrlPage->Login();
                 } else if (($_GET['action'] == 'Deconnexion')) {

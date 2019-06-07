@@ -7,34 +7,15 @@ if (isset($_SESSION['pseudo']))
 ?>
 
 
-<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=3z908r4dp7pqzdnxd7b0phc2rlys8utzat2fztg62wbzvcno"></script>
-<!-- <script>tinymce.init({selector:'textarea', language : "fr"});</script> -->
-
 <section id="admin">
 
 <a href="?action=Deconnexion">Déconnexion</a>
 
-        <h2>Poster un article</h2>
-                <form method="post" action="index.php?action=creerBillet" enctype="multipart/form-data">
-                    <div>
-                        <label for="titre" id="labelnom">Titre :</label>
-                        <input type="text" id="titre" name="titre" placeholder="Titre" required>
-                    </div>
-                    <div>
-                        <label for="image" id=labelimage>Image :</label>
-                        <input type="file" id="image" name="image" placeholder="image" required>
-                    </div>
 
-                    <div>
-                        <label for="contenu">Contenu :</label>
-                        <textarea type="text" id="contenu" name="contenu" placeholder="Votre contenu" required></textarea>
-                    </div>
-                    <div>
-                        <input type="submit" id="bouton_contact" value="Ajouter">
-                    </div>
-                </form>
 
                 <h2>Liste des articles</h2>
+
+                <a href="?action=Ajouter">Ajouter</a>
 <table>
         <tr>
             <th>Id</th>
@@ -51,12 +32,35 @@ if (isset($_SESSION['pseudo']))
             <td>Nom de l'auteur</td>
             <td><?= $billet['titre'] ?></td>
             <td><?= $billet['date'] ?></td>
-            <?php echo "<td><a href='?action=modifierBillet&id=".$billet['id']."'>Modifier</a></td>"; ?>
+            <?php echo "<td><a href='?action=Modifier&id=".$billet['id']."'>Modifier</a></td>"; ?>
             <?php echo "<td><a href='?action=supprimerBillet&id=".$billet['id']."'>Supprimer</a></td>"; ?>
         </tr>
     <?php endforeach; ?>
 </table>
-   
+
+<table>
+        <tr>
+            <th>Id</th>
+            <th>Auteur</th>
+            <th>Date d'ajout</th>
+            <th>Contenu</th>
+            <th>Signalé</th>
+            <th>Supprimer</th>
+
+        </tr>
+    <?php foreach ($commentaires as $commentaireAffichage): ?>
+        <tr>
+            <td><?= $commentaireAffichage['id'] ?></td>
+            <td><?= $commentaireAffichage['auteur'] ?></td>
+            <td><?= $commentaireAffichage['date'] ?></td>
+            <td><?= $commentaireAffichage['contenu'] ?></td>
+            <td><?= $commentaireAffichage['signaler'] ?></td>
+            <?php echo "<td><a href='?action=supprimerCommentaire&id=".$commentaireAffichage['id']."'>Supprimer</a></td>"; ?>
+        </tr>
+    <?php endforeach; ?>
+</table>
+
+
 </section>
 
 
@@ -66,4 +70,9 @@ if (isset($_SESSION['pseudo']))
 }
 ?>
 
+<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=3z908r4dp7pqzdnxd7b0phc2rlys8utzat2fztg62wbzvcno"></script>
+<script>
+// tinymce.init({selector:'textarea', language : "fr"});
+
+</script>
 
