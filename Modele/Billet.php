@@ -35,6 +35,7 @@ class Billet extends Modele {
     }
 
     public function ajouterBillet($titre, $lien, $contenuBillet) {
+        $titre = htmlspecialchars($titre);
         $sql = 'insert into T_BILLET(BIL_DATE, BIL_IMAGE, BIL_TITRE, BIL_CONTENU)'
             . 'values(?, ?, ?, ?)';
         $dateBillet = date('Y-m-d H:i:s');  // Récupère la date courante

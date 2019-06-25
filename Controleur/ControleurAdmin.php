@@ -23,7 +23,7 @@ public function connexion($pseudo, $mdp) {
         header('Location: index.php?action=Admin');
     
     } else {
-        echo 'Attention!';
+        header('Location: index.php');
     }   
  }
 }

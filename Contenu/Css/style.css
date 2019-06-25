@@ -1,12 +1,41 @@
-/* Pour pouvoir utiliser une hauteur (height) ou une hauteur minimale
-   (min-height) sur un bloc, il faut que son parent direct ait lui-même une
-   hauteur déterminée (donc toute valeur de height sauf "auto": hauteur en
-   pixels, em, autres unités...).
-   Si la hauteur du parent est en pourcentage, elle se réfère alors à la
-   hauteur du «grand-père», et ainsi de suite.
-   Pour pouvoir utiliser un "min-height: 100%" sur div#global, il nous faut:
-   - un parent (body) en "height: 100%";
-   - le parent de body également en "height: 100%". */
+/* Tableau de contenu :
+
+    1 - Elèments principaux
+        A- HTML/Body.
+        B- Titre/Paragraphe.
+        C- Formulaire.
+    2- Header
+        A- Titre.
+        B- Navigation.
+    3- Footer.
+    4- Accueil.
+        A- Bannière.
+        B- Contenu.
+        C- Liste d'article.
+    5- A Propos.
+    6- Livres.
+        A- Contenu.
+    7- Contact.
+        A- Titre/Paragraphe.
+        B- Carte.
+    8- Articles.
+        A- Affichage articles.
+        B- Commentaires.
+    9- Admin.
+        A- Tableau.
+    10- Responsives.
+        A- Menu.
+        B- Accueil.
+        C- Livre.
+*/
+
+
+/* ------------------- 
+    1- Elèments principaux.
+   ------------------- */
+
+/* --- A- HTML/Body --- */
+
 html {
     overflow-x: hidden!important;
 }
@@ -21,20 +50,14 @@ body {
     
 }
 
+/* --- B- Titre/Paragraphe --- */
+
 h1, h2, h3 {
-    font-family: 'ABeeZee', sans-serif
+    font-family: 'ABeeZee', sans-serif;
 }
 
 p, a {
     font-family: 'Nunito Sans', sans-serif;
-}
-
-button a {
-    text-decoration: none;
-}
-
-a {
-    color: #144760;
 }
 
 p {
@@ -42,6 +65,44 @@ p {
     margin-right: 10vw;
     text-align: initial!important;
 }
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: #144760;
+    text-decoration: none;
+}
+
+button a {
+    text-decoration: none;
+}
+
+/* --- C-  Formulaire. --- */
+
+input {
+    width             : 220px;
+    padding           : 5px;
+    margin-top        : 20px;
+    margin-left       : 5px;
+}
+
+textarea {
+    width             : 220px;
+    height            : 150px;
+    padding           : 5px;
+    margin-top        : 20px;
+    margin-left       : 5px;
+}
+
+label {
+    display: none;
+}
+
+/* ------------------- 
+    2- Header.
+   ------------------- */
 
 header {
     display: flex;
@@ -57,6 +118,9 @@ header {
 	padding-bottom: 5px
 }
 
+
+/* --- A- Titre --- */
+
 #titre_header
 {
 	display: flex;
@@ -69,6 +133,9 @@ header {
     color: white;
     font-weight: bold;
 }
+
+
+/* --- B- Navigation --- */
 
 header nav ol
 {
@@ -97,44 +164,9 @@ header nav a:hover
     padding-bottom: 5px;
 }
 
-#banniere {
-    display: flex;
-}
-
-#banniere img {
-    width: 500px;
-    box-shadow: 0px 5px 15px lightgray;
-    margin-left: 80px;
-}
-
-#banniere_texte {
-    margin-left: 100px;
-    margin-top: 50px;
-}
-
-#banniere_bouton {
-    text-align: center;
-    width: 150px;
-    margin-top: 35px;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: 1px solid lightgrey;
-    border-radius: 5px;
-    box-shadow: 0px 5px 15px lightgrey;
-    font-weight: bold;
-    background-color: white;
-    color: #545454;
-}
-
-.contenu {
- margin-top: 80px;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- text-align: center;
-}
+/* ------------------- 
+    3- Footer.
+   ------------------- */
 
 footer
 {
@@ -157,12 +189,126 @@ footer p
     text-align: start;
 }
 
-#livresImg {
+/* ------------------- 
+    4- Accueil.
+   ------------------- */
+
+#indexImg {
     width: 100vw;
     height: 600px;
     margin-top: -150px;
     margin-bottom: 80px;
 }
+
+/* --- A- Bannière --- */
+
+#banniere {
+    display: flex;
+    justify-content: center;
+
+}
+
+#banniere img {
+    width: 500px;
+    box-shadow: 0px 5px 15px lightgray;
+    margin-left: 80px;
+}
+
+#banniere_texte {
+    margin-left: 100px;
+    margin-top: 50px;
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#banniere_bouton {
+    text-align: center;
+    width: 150px;
+    margin-top: 35px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px lightgrey;
+    font-weight: bold;
+    background-color: white;
+    color: #545454;
+}
+
+/* --- B- Contenu --- */
+
+.contenu {
+ margin-top: 80px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+}
+
+#titre {
+    margin-bottom: 50px;
+}
+
+/* --- C- Liste d'article. --- */
+
+#articles {
+    margin-top: 120px;
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.billets {
+  height: 600px;
+  width: 40vw;
+  margin: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px lightgrey;
+}
+
+.billets_image {
+    height: 450px;
+    background-color: rgb(4, 0, 255);
+}
+
+.billets_image img {
+    width: 40vw;
+    height: 450px;
+}
+
+.billets_texte {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.billets_bouton {
+    text-align: center;
+    width: 130px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px lightgrey;
+    font-weight: bold;
+    background-color: white;
+    color: #545454;
+}
+
+/* ------------------- 
+    5- A Propos.
+   ------------------- */
 
 #aProposImg {
     width: 100vw;
@@ -171,7 +317,11 @@ footer p
     margin-bottom: 80px;
 }
 
-#indexImg {
+/* ------------------- 
+    6- Livres.
+   ------------------- */
+
+#livresImg {
     width: 100vw;
     height: 600px;
     margin-top: -150px;
@@ -184,6 +334,8 @@ footer p
     margin-bottom: 50px;
 }
 
+/* --- A- Contenu --- */
+
 .livres img {
     width: 500px;
     box-shadow: 0px 5px 15px lightgray;
@@ -192,7 +344,11 @@ footer p
 .livres_texte {
     margin-left: 100px;
     margin-top: 50px;
-    width: 600px;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .livres_bouton {
@@ -210,17 +366,9 @@ footer p
     color: #545454;
 }
 
-#contact {
-    display: flex;
-}
-
-#formulaire_contact {
-    width: 350px;
-    height: 600px;
-    background-color: white;
-    box-shadow: 0px 5px 15px lightgrey;
-    margin: 50px;
-}
+/* ------------------- 
+    7- Contact.
+   ------------------- */
 
 #infos_contact {
     width: 350px;
@@ -229,6 +377,8 @@ footer p
     box-shadow: 0px 5px 15px lightgrey;
     margin: 50px;
 }
+
+/* --- A- Titre/Paragraphe. --- */
 
 #infos_contact p {
     width: 250px;
@@ -239,20 +389,7 @@ footer p
     margin-bottom: 80px;
 }
 
-#bouton_contact {
-    text-align: center;
-    width: 150px;
-    margin-top: 35px;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: 1px solid lightgrey;
-    border-radius: 5px;
-    box-shadow: 0px 5px 15px lightgrey;
-    font-weight: bold;
-    background-color: white;
-    color: #545454;
-}
+/* --- B- Carte. --- */
 
 iframe {
     width: 100vw;
@@ -262,109 +399,12 @@ iframe {
     border: none;
 }
 
-#formulaire_contact h2 {
-    margin-top: 50px;
-    margin-bottom: 80px;
-}
 
-input {
-    width             : 220px;
-    padding           : 5px;
-    margin-top        : 20px;
-    margin-left       : 5px;
-}
+/* ------------------- 
+    8- Articles.
+   ------------------- */
 
-textarea {
-    width             : 220px;
-    height            : 150px;
-    padding           : 5px;
-    margin-top        : 20px;
-    margin-left       : 5px;
-}
-
-label {
-    display: none;
-}
-
-#admin h2 {
-    margin-top: 50px;
-}
-
-table {
-    border: 1px solid lightgrey;
-    border-radius: 5px;
-    box-shadow: 0px 5px 15px lightgrey;
-    border-collapse: collapse;
-    margin-top: 20px;
-    }
-    th {
-    font-family: monospace;
-    border: 1px solid lightgrey;
-    padding: 8px;
-    }
-    td {
-    font-family: sans-serif;
-    border: 1px solid lightgrey;
-    padding: 8px;
-    text-align: center;
-    }
-    tr:hover {
-        background-color: lightgrey;
-    }
-
-#articles {
-    margin-top: 120px;
-    width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.billets {
-  height: 600px;
-  width: 500px;
-  margin: 20px;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  box-shadow: 0px 5px 15px lightgrey;
-}
-
-.billets_image {
-    height: 450px;
-    background-color: rgb(4, 0, 255);
-}
-
-.billets_image img {
-    width: 500px;
-    height: 450px;
-}
-
-.billets_texte {
-    margin-top: 30px;
-}
-
-.billets_bouton {
-    text-align: center;
-    width: 150px;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: 1px solid lightgrey;
-    border-radius: 5px;
-    box-shadow: 0px 5px 15px lightgrey;
-    font-weight: bold;
-    background-color: white;
-    color: #545454;
-}
-
-#contenu {
-    height: 500px;
-}
-
-#titre {
-    margin-bottom: 50px;
-}
+/* --- A- Affichage article. --- */
 
 .les_articles {
     width: 80vw;
@@ -391,6 +431,9 @@ table {
     height: 400px;
     width: 70vw;
 }
+
+
+/* --- B-  Commentaires. --- */
 
 .reponses {
     display: flex;
@@ -420,4 +463,82 @@ table {
     padding-top: 30px;
     padding-bottom: 50px;
 }
+
+/* ------------------- 
+    9-  Admin.
+   ------------------- */
+
+/* --- A- Tableau. --- */
+
+.admin h2 {
+    margin-top: 50px;
+}
+
+table {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px lightgrey;
+    border-collapse: collapse;
+    margin-top: 20px;
+    }
+    th {
+    font-family: monospace;
+    border: 1px solid lightgrey;
+    padding: 8px;
+    }
+    td {
+    font-family: sans-serif;
+    border: 1px solid lightgrey;
+    padding: 8px;
+    text-align: center;
+    }
+    tr:hover {
+        background-color: lightgrey;
+    }
+
+/* ------------------- 
+    10-  Responsive.
+   ------------------- */
+   @media (max-width: 1024px)
+   {
+   
+/* --- A- Menu. --- */
+header {
+    height: 200px;
+}
+header nav ol {
+    flex-direction: column;
+}
+
+header nav li {
+    padding: 3px;
+}
+   
+/* --- B- Accueil. --- */
+
+#banniere {
+    flex-direction: column;
+}
+
+#banniere img {
+    width: 50vw;
+}
+
+#articles {
+    flex-direction: column;
+}
+
+/* --- C- Livres. --- */
+
+.livres {
+    flex-direction: column;
+}
+
+.livres img {
+    width: 50vw;
+}
+
+   }
+
+
 

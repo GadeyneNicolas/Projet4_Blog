@@ -7,7 +7,7 @@ if (isset($_SESSION['pseudo']))
 ?>
 
 
-<section id="admin">
+<section class="admin">
 
 <a href="?action=Deconnexion">Déconnexion</a>
 
@@ -15,7 +15,7 @@ if (isset($_SESSION['pseudo']))
 
                 <h2>Liste des articles</h2>
 
-                <a href="?action=Ajouter">Ajouter</a>
+                <a href="?action=Ajouter">Ajouter un article.</a>
 <table>
         <tr>
             <th>Id</th>
@@ -70,9 +70,8 @@ if (isset($_SESSION['pseudo']))
 }
 ?>
 
+<!-- 
 <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=3z908r4dp7pqzdnxd7b0phc2rlys8utzat2fztg62wbzvcno"></script>
 <script>
-// tinymce.init({selector:'textarea', language : "fr"});
-
-</script>
-
+tinymce.init({selector:'textarea', language : "fr"});
+</script> -->

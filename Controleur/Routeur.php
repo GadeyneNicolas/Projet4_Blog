@@ -105,6 +105,7 @@ class Routeur {
     }
 
     // Recherche un paramètre dans un tableau
+    // Htmlspecialchars ?
     private function getParametre($tableau, $nom) {
         if (isset($tableau[$nom])) {
             return $tableau[$nom];

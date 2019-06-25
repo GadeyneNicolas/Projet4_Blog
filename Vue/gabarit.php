@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="Contenu/Css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=ABeeZee|Nunito+Sans:400,700" rel="stylesheet">
-    <title><?= $titre ?></title>
+    <title>Jean FORTEROCHE</title>
 </head>
 
 <body>

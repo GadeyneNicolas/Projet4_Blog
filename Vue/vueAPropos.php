@@ -1,49 +1,52 @@
+<section id="aPropos">
+    <img id="aProposImg" src="Contenu/Images/apropos.jpg" alt="image a propos">
+    <h2>A propos de l'auteur</h2>
 
-        <section id="aPropos">
-            <img id="aProposImg" src="Contenu/Images/apropos.jpg">
-            <h2>A propos de l'auteur</h2>
+    <p>Velut per avide ulla dicere ulla ordo et ob avide Ptolomaeo iuste angustias enim magis ob est in culpa
+        et rege advectae sunt facta magis veneno et morte Romanum ideoque nunc dicere voluntaria inpositae
+        classi dicere et urbem hausto et gestorum hausto advectae repetetur culpa culpa nunc populum gestorum
+        hanc ulla repetetur hausto socio hostiles nunc gestorum in inpositae tributaria populum magis
+        angustias foederato nostri est eius insulam ideoque Catonem sine hausto veneno populum eius sine
+        nunc hostiles in dicere gestorum ob veneno ob Ptolomaeo et nostri voluntaria in populum piget hostiles
+        sunt sine per tributaria foederato classi angustias Catonem. Velut per avide ulla dicere ulla ordo
+        et ob avide Ptolomaeo iuste angustias enim magis ob est in culpa et rege advectae sunt facta magis
+        veneno et morte Romanum ideoque nunc dicere voluntaria inpositae classi dicere et urbem hausto et
+        gestorum hausto advectae repetetur culpa culpa nunc populum gestorum hanc ulla repetetur hausto
+        socio hostiles nunc gestorum in inpositae tributaria populum magis angustias foederato nostri est
+        eius insulam ideoque Catonem sine hausto veneno populum eius sine nunc hostiles in dicere gestorum
+        ob veneno ob Ptolomaeo et nostri voluntaria in populum piget hostiles sunt sine per. </p>
 
-            <p>Robert Kiyosaki, né le 8 avril 1947, est un entrepreneur
-                américain spécialisé dans le développement personnel. À travers ses livres et 
-                les jeux qu'il commercialise, Robert Kiyosaki défend le concept d'éducation financière, 
-                qui inclut la culture de l'entrepreneuriat, la formation commerciale et la maîtrise des 
-                techniques d'investissement.</p>
+    <h3>Carrière</h3>
 
-            <h3>Carrière</h3>
+    <p>Velut per avide ulla dicere ulla ordo et ob avide Ptolomaeo iuste angustias enim magis ob est in
+        culpa et rege advectae sunt facta magis veneno et morte Romanum ideoque nunc dicere voluntaria
+        inpositae classi dicere et urbem hausto et gestorum hausto advectae repetetur culpa culpa nunc
+        populum gestorum hanc ulla repetetur hausto socio hostiles nunc gestorum in inpositae tributaria
+        populum magis angustias foederato nostri est eius insulam ideoque Catonem sine hausto veneno
+        populum eius sine nunc hostiles in dicere gestorum ob veneno ob Ptolomaeo et nostri voluntaria
+        in populum piget hostiles sunt sine per tributaria foederato classi angustias Catonem. Velut per
+        avide ulla dicere ulla ordo et ob avide Ptolomaeo iuste angustias enim magis ob est in culpa et
+        rege advectae sunt facta magis veneno et morte Romanum ideoque nunc dicere voluntaria inpositae
+        classi dicere et urbem hausto et gestorum hausto advectae repetetur culpa culpa nunc populum
+        gestorum hanc ulla repetetur hausto socio hostiles nunc gestorum in inpositae tributaria populum
+        magis angustias foederato nostri est eius insulam ideoque Catonem sine hausto veneno populum eius
+        sine nunc hostiles in dicere gestorum ob veneno ob Ptolomaeo et nostri voluntaria in populum piget
+        hostiles sunt sine per.</p>
 
-            <p>Robert Kiyosaki est né et a grandi à Hawaii. Il est le fils de l'éducateur 
-                Ralph H. Kiyosaki (1919-1991). <br>
-                Dans ses livres, il raconte qu'il a servi dans le corps des Marines en tant que pilote d'hélicoptère 
-                de combat pendant la guerre du Viêt Nam. Il a quitté les Marines en 1975 et a obtenu un emploi de 
-                vendeur de photocopieurs chez Xerox Corporation. <br>
-                En 1977, Robert Kiyosaki a créé une entreprise qui a lancé sur le marché le premier portefeuille en 
-                nylon et velcro, modèle "surfeur". La société a connu un succès modéré à ses débuts et a finalement 
-                fait faillite. Au début des années 1980, Kiyosaki a créé une entreprise de création et distribution de 
-                t-shirts de groupes de rock, qu'il a vendue en 1985.<br> 
-                Grâce à divers investissements, notamment immobiliers, Robert Kiyosaki explique qu'il a pris sa 
-                retraite à l'âge de 47 ans. Néanmoins, il a lancé la société Technologies Cashflow en 1997, qui édite 
-                ses livres et commercialise les marques "Rich Dad" et "Cashflow". </p>
+    <h3>Bibliographie</h3>
 
-            <h3>Bibliographie</h3>
+    <ul>
+        <li><a href="index.php?action=MesLivres">Billet simple pour l'Alaska.</a></li>
+        <li><a href="index.php?action=MesLivres">Billet simple pour l'Arctique.</a></li>
+        <li><a href="index.php?action=MesLivres">Billet simple pour le Canada.</a></li>
+    </ul>
 
-            <ul>
-                <li>Livre</li>
-                <li>Livre</li>
-                <li>Livre</li>
-                <li>Livre</li>
-                <li>Livre</li>
-                <li>Livre</li>
-                <li>Livre</li>
-            </ul>
+    <h3>Lien externes</h3>
 
-            <h3>Lien externes</h3>
+    <ul>
+        <li><a href="#">Site web</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Mail</a></li>
+    </ul>
 
-            <ul>
-                    <li>Site web</li>
-                    <li>Twitter</li>
-                    <li>Mail</li>
-            </ul>
-
-       </section>
-
-
+</section>

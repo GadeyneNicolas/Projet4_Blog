@@ -1,4 +1,3 @@
-
 <?php 
 session_start ();
 
@@ -7,8 +6,14 @@ if (isset($_SESSION['pseudo']))
 
 ?>
 
+<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=3z908r4dp7pqzdnxd7b0phc2rlys8utzat2fztg62wbzvcno"></script>
+<script>
+tinymce.init({selector:'textarea', language : "fr"});
 
-<section id="admin">
+</script>
+
+
+<section class="admin">
 
 <a href="?action=Deconnexion">Déconnexion</a>
 
@@ -43,9 +48,5 @@ if (isset($_SESSION['pseudo']))
 }
 ?>
 
-<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=3z908r4dp7pqzdnxd7b0phc2rlys8utzat2fztg62wbzvcno"></script>
-<script>
-// tinymce.init({selector:'textarea', language : "fr"});
 
-</script>
 

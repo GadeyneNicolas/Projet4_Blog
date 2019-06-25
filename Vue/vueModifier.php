@@ -6,10 +6,15 @@ if (isset($_SESSION['pseudo']))
 {
 
 ?>
+<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=3z908r4dp7pqzdnxd7b0phc2rlys8utzat2fztg62wbzvcno"></script>
+<script>
+tinymce.init({selector:'textarea', language : "fr"});
+
+</script>
 
 <h3 class="titreBillet"><?= $billet['titre'] ?></h3>
 
-<section id="admin">
+<section class="admin">
 
 
 <a href="?action=Deconnexion">Déconnexion</a>
