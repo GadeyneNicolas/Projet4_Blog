@@ -28,25 +28,17 @@ abstract class Modele {
      * 
      * @return PDO L'objet PDO de connexion à la BDD
      */
-    // private function getBdd() {
-    //     if ($this->bdd == null) {
-    //         // Création de la connexion
-    //         $this->bdd = new PDO('mysql:host=localhost;dbname=blog;charset=utf8',
-    //                 'root', '',
-    //                 array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    //     }
-    //     return $this->bdd;
-    // }
-
     private function getBdd() {
         if ($this->bdd == null) {
             // Création de la connexion
-            $this->bdd = new PDO('mysql:host=db5000106222.hosting-data.io;dbname=dbs100677;charset=utf8',
-                    'dbu141300', '=3m8cHP(',
+            $this->bdd = new PDO('mysql:host=localhost;dbname=blog;charset=utf8',
+                    'root', '',
                     array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
         return $this->bdd;
     }
+
+    
 
 }
 
