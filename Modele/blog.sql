@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 18 juin 2019 à 07:23
+-- Généré le :  jeu. 27 juin 2019 à 07:39
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -31,18 +31,16 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `t_admin`;
 CREATE TABLE IF NOT EXISTS `t_admin` (
   `AD_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `AD_PSEUDO` varchar(255) NOT NULL,
-  `AD_MOTDEPASSE` varchar(255) NOT NULL,
+  `AD_PSEUDO` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `AD_MOTDEPASSE` varchar(255) CHARACTER SET latin1 NOT NULL,
   PRIMARY KEY (`AD_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `t_admin`
 --
 
 INSERT INTO `t_admin` (`AD_ID`, `AD_PSEUDO`, `AD_MOTDEPASSE`) VALUES
-(2, 'pseudo', '$2y$10$PeWov4h1oIaNI3zhBP9n9OjJYER6NI1B0z/4TIZtnHfYE5Gpl9L02'),
-(3, 'nico', '$2y$10$8UsPok/8W6zQ1pg3X5ers.YAjuxaWZeNYPQ/Im3z7YpHIc6XmYJ2a'),
 (4, 'Admin', '$2y$10$.px1f1uVuWEaAR4PcY3egeuetLym.z1.nzgr4QK1B6LHIt1U5pmRC');
 
 -- --------------------------------------------------------
@@ -55,11 +53,11 @@ DROP TABLE IF EXISTS `t_billet`;
 CREATE TABLE IF NOT EXISTS `t_billet` (
   `BIL_ID` int(11) NOT NULL AUTO_INCREMENT,
   `BIL_DATE` datetime NOT NULL,
-  `BIL_TITRE` varchar(100) NOT NULL,
-  `BIL_IMAGE` varchar(255) DEFAULT NULL,
-  `BIL_CONTENU` text NOT NULL,
+  `BIL_TITRE` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `BIL_IMAGE` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `BIL_CONTENU` text CHARACTER SET latin1 NOT NULL,
   PRIMARY KEY (`BIL_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `t_billet`
@@ -80,19 +78,23 @@ DROP TABLE IF EXISTS `t_commentaire`;
 CREATE TABLE IF NOT EXISTS `t_commentaire` (
   `COM_ID` int(11) NOT NULL AUTO_INCREMENT,
   `COM_DATE` datetime NOT NULL,
-  `COM_AUTEUR` varchar(100) NOT NULL,
-  `COM_CONTENU` text NOT NULL,
-  `COM_SIGNALER` varchar(100) NOT NULL DEFAULT 'Non',
+  `COM_AUTEUR` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `COM_CONTENU` text CHARACTER SET latin1 NOT NULL,
+  `COM_SIGNALER` varchar(100) CHARACTER SET latin1 NOT NULL DEFAULT 'Non',
   `BIL_ID` int(11) NOT NULL,
-  PRIMARY KEY (`COM_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`COM_ID`),
+  KEY `BIL_ID` (`BIL_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `t_commentaire`
+-- Contraintes pour les tables déchargées
 --
 
-INSERT INTO `t_commentaire` (`COM_ID`, `COM_DATE`, `COM_AUTEUR`, `COM_CONTENU`, `COM_SIGNALER`, `BIL_ID`) VALUES
-(6, '2019-06-07 09:25:20', 'Nico', 'J\'aime pas ton livre!', 'Oui', 46);
+--
+-- Contraintes pour la table `t_commentaire`
+--
+ALTER TABLE `t_commentaire`
+  ADD CONSTRAINT `fk_commentaire_billet` FOREIGN KEY (`BIL_ID`) REFERENCES `t_billet` (`BIL_ID`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

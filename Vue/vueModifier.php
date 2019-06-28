@@ -1,16 +1,10 @@
-
 <?php 
-session_start ();
+
 
 if (isset($_SESSION['pseudo']))
 {
 
 ?>
-<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=3z908r4dp7pqzdnxd7b0phc2rlys8utzat2fztg62wbzvcno"></script>
-<script>
-tinymce.init({selector:'textarea', language : "fr"});
-
-</script>
 
 <h3 class="titreBillet"><?= $billet['titre'] ?></h3>
 
@@ -37,7 +31,7 @@ tinymce.init({selector:'textarea', language : "fr"});
 
     <div>
         <label for="contenu">Contenu :</label>
-        <textarea type="text" id="contenu" name="contenu" placeholder="Votre contenu" required> <?php echo "".$billet['contenu']."" ?> </textarea>
+        <textarea type="text" id="contenu" name="contenu" placeholder="Votre contenu" > <?php echo "".$billet['contenu']."" ?> </textarea>
     </div>
     <div>
         <input type="submit" id="bouton_contact" value="modifier">

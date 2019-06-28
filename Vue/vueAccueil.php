@@ -7,7 +7,7 @@
 <section id="banniere">
     <div id="banniere_image"><img src="Contenu/Images/banniere.png" alt="image de la bannière"></div>
     <div id="banniere_texte">
-        <h2 id="titreBlog">Billet simple pour l'Alaska</h2>
+        <h1 id="titreBlog">Billet simple pour l'Alaska</h1>
         <p>Je vous souhaite la bienvenue sur mon blog.<br>
         Celui-ci a été créé dans le but de promouvoir mon prochain livre. Je poste mes chapitres sous
         forme d'articles au au fur et à mesure des avancées de mon livre Billet simple pour l'Alaska.
@@ -16,7 +16,7 @@
     </div>
 </section>
 
-<div id=articles>
+<div id=les_billets>
 <?php foreach ($billets as $billet): ?>
     <section class="billets">
         <div class=billets_image>

@@ -54,8 +54,11 @@ class ControleurBillet {
 
      // Supprime un billet
      public function supprimerBillet($id) {
-        // Supprime le billet
-        $this->billet->enleverBillet($id);
+        if (isset($_SESSION['pseudo'])) {
+            $this->billet->enleverBillet($id);
+            } else {
+                header("Location: index.php?action=Login");
+            }
     }
 
     // modifier un billet
@@ -82,10 +85,13 @@ class ControleurBillet {
         $this->commentaire->signalerCommentaire($id);
     }
 
-     // Supprime un billet
+     // Supprime un commentaire
      public function supprimerCommentaire($id) {
-        // Supprime le billet
-        $this->commentaire->enleverCommentaire($id);
+        if (isset($_SESSION['pseudo'])) {
+            $this->commentaire->enleverCommentaire($id);
+            } else {
+                header("Location: index.php?action=Login");
+            }
     }
 
 

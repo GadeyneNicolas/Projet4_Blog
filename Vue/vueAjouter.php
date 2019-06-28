@@ -1,17 +1,11 @@
 <?php 
-session_start ();
-
 if (isset($_SESSION['pseudo']))
 {
 
 ?>
 
 <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=3z908r4dp7pqzdnxd7b0phc2rlys8utzat2fztg62wbzvcno"></script>
-<script>
-tinymce.init({selector:'textarea', language : "fr"});
-
-</script>
-
+<script>tinymce.init({selector:'textarea', language : "fr"});</script>
 
 <section class="admin">
 
@@ -31,16 +25,14 @@ tinymce.init({selector:'textarea', language : "fr"});
 
     <div>
         <label for="contenu">Contenu :</label>
-        <textarea type="text" id="contenu" name="contenu" placeholder="Votre contenu" required></textarea>
+        <textarea type="text" id="contenu" name="contenu" placeholder="Votre contenu" ></textarea>
     </div>
     <div>
         <input type="submit" id="bouton_contact" value="Ajouter">
     </div>
 </form>
 
-   
 </section>
-
 
 <?php
 } else {
