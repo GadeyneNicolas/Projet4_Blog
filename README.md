@@ -1,5 +1,9 @@
 # projet4
+
 Projet 4 de la formation DWJ d'Openclassrooms.
+Pour en savoir plus :
+https://bleu-blanc-web.fr
+
 ----------------------------------------------
 Cahier des charges :
 ----------------------------------------------
